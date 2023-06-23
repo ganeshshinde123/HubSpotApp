@@ -9,6 +9,11 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HomeComponent } from './home/home.component';
+import { FormsModule, NgForm } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
+import { UserserviceService } from './services/userservice.service';
+// import {MatFormFieldModule} from '@angular/material/form-field';
 
 @NgModule({
   declarations: [
@@ -22,9 +27,14 @@ import { HomeComponent } from './home/home.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+    FormsModule,
+    
   ],
-  providers: [],
+  providers: [UserserviceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
