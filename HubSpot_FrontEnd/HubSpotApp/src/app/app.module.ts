@@ -9,11 +9,26 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HomeComponent } from './home/home.component';
-import { FormsModule, NgForm } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { UserserviceService } from './services/userservice.service';
-// import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatCardModule} from '@angular/material/card';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import { CommonModule, NgFor } from '@angular/common';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CustomerComponent } from './customer/customer.component';
+import { BookinghistoryComponent } from './bookinghistory/bookinghistory.component';
+import { BookmeetComponent } from './bookmeet/bookmeet.component';
+import { AdditemComponent } from './additem/additem.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
+import {MatExpansionModule} from '@angular/material/expansion';
+import { RouteService } from './services/route.service';
+import { RoomServiceService } from './services/room-service.service';
+import { CustomerService } from './services/customer.service';
+import { RoomserviceComponent } from './roomservice/roomservice.component';
+
 
 @NgModule({
   declarations: [
@@ -23,18 +38,30 @@ import { UserserviceService } from './services/userservice.service';
     LoginComponent,
     RegisterComponent,
     DashboardComponent,
-    HomeComponent
+    HomeComponent,
+    CustomerComponent,
+    BookinghistoryComponent,
+    BookmeetComponent,
+    AdditemComponent,
+    UserProfileComponent,
+    RoomserviceComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    BrowserAnimationsModule,
+    MatFormFieldModule,
+    MatCardModule,
     HttpClientModule,
     ReactiveFormsModule,
     FormsModule,
-    
+    MatCheckboxModule,
+    NgFor,
+    MatExpansionModule,
+    CommonModule,
   ],
-  providers: [UserserviceService],
+  providers: [UserserviceService,RouteService,RoomServiceService,CustomerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

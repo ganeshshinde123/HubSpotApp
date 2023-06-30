@@ -7,33 +7,31 @@
     <h2 class="ms-2 mb-3 text-center ">Login Details</h2>
     <form class="bg-light m-2" [formGroup]="loginform" (ngSubmit)="login()">
       <div class="mb-3 row m-2 ms-3">
-        
-            <!-- <label for="email" class="col-sm-2 col-form-label ">Email</label>&nbsp;
-            <div class="col-sm-8">
-              <input type="email" class="form-control" id="Email" placeholder="example@some.com" formControlName="email" required>
-               
-            </div>
+          <div class="form-floating mb-3 mt-3 ">
+            <label for="floatingInput" class="ms-3">Login As</label>
+            <select type="hidden" formControlName="role">
+              <optgroup>
+                <option>User</option>
+                <option>Admin</option>
+              </optgroup>
+            </select>
+           
           </div>
-          <div class="mb-3 row m-2 ms-3">
-            <label for="password" class="col-sm-2 col-form-label" >Password</label>&nbsp;
-            <div class="col-sm-8">
-              <input type="password" class="form-control" id="Password" formControlName="password">
-            </div>
-            -->
-            <div class="form-floating mb-3 mt-3 ">
+          
+          <div class="form-floating mb-3 mt-3 ">
               <input type="email" class="form-control rounded-2" id="floatingInput" placeholder="name@example.com">
               <label for="floatingInput" class="ms-3">Email address</label>
-            </div>
-            <div class="form-floating">
+          </div>
+          <div class="form-floating">
               <input type="password" class="form-control rounded-2" id="floatingPassword" placeholder="Password">
               <label for="floatingPassword" class="ms-3">Password</label>
-            </div>
-        <div class="ms-5 mb-3 mt-4">
+          </div>
+          <div class="ms-5 mb-3 mt-4">
             <div class=" ms-5  col-sm-10">
                 <input type="submit" class="btn btn-outline-primary btn align-self-center w-50" value="Login"/>
             </div>
         </div>
-        <div class="mb-3 row">
+      <div class="mb-3 row">
           <label class="col-sm-12 text-center" >Don't have account <span><a href="#">click here</a></span> to register</label>
           
         </div>

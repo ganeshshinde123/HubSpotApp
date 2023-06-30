@@ -25,6 +25,8 @@ export class RegisterComponent implements OnInit {
       email:['',Validators.required],
       mobileNumber:['',Validators.required],
       companyName:['',Validators.required],
+      age:[,Validators.required],
+      gender:[''],
       password:['',Validators.required]
     })
 
@@ -53,7 +55,7 @@ export class RegisterComponent implements OnInit {
     //   err=>{console.log(err)}
     // )
     console.log("user service called")
-    alert("Heloo"+`${this.registerd.firstName}`)
+    alert("Hello "+`${this.registerd.firstName}`)
     console.log(this.registerd)
     }else{
       alert("enter the valid details")

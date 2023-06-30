@@ -23,8 +23,11 @@ export class LoginComponent {
     
       console.log(this.loginform.value);
       this.userService.dologin(this.loginform.value);
-      alert("login success")
- 
+      // alert("login success")
+      this.userService.dologin(this.loginform.value).subscribe(
+        data=>{console.log("login success"),alert("login success"),console.log(data)},
+        err=>{console.log(err)}
+      )
       alert("Enter valid details")
     
   }

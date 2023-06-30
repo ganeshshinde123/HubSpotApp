@@ -7,4 +7,6 @@ export class Register
     mobileNumber:string=""
     companyName:string=""
     password:string=""
+    age:Number=0
+    gender!:String
 }

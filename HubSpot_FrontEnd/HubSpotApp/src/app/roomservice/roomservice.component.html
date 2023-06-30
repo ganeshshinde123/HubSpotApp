@@ -1,0 +1,35 @@
+<p>room service works</p>
+<div class="container">
+  <div *ngFor="let room of rList">
+      <div style="margin: 100px; width: 100%; height:100% ">
+        <mat-accordion>
+          <mat-expansion-panel style="width: 90%;"
+           (opened)="panelOpenState = true"
+                               (closed)="panelOpenState = false">
+            <mat-expansion-panel-header style="height:fit-content; width: fit-content;">
+              <img mat-card-image src={{room.imgurl}} alt="images is not loaded" style="height: 50%;"> 
+                     
+            </mat-expansion-panel-header>
+            <b>Room Details</b>
+            <b>
+              <!-- {{room.roomId}}
+              <br>  -->
+              {{room.details}}
+              <br>
+              {{room.roomName}}
+              <br>
+              {{room.price}}
+              <br>
+              {{room.location}}
+              <br>
+              {{room.capacity}}
+            </b>
+            <mat-action-row>
+              <button mat-button color="warn" (click)="getRoomById(room.roomId)"></button>
+              <button mat-button color="success" (click)="bookRoom()">Book Now</button>
+            </mat-action-row> 
+          </mat-expansion-panel>
+        </mat-accordion>
+        </div>      
+    </div>
+  </div>

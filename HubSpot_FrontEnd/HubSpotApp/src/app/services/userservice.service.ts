@@ -14,9 +14,10 @@ export class UserserviceService {
    this.result=new User();
    this.regitser=new Register();
   }
-  UserUrl :string="http://localhost:8080/api/v1/user"; 
+  UserUrl :string="http://localhost:8080/api/v2/getUsrByEmail"; 
 
   dologin(uObj:User):Observable<User>{
+    console.log(uObj.email)
     return this.httpClient.post<User>(this.UserUrl,uObj)
     
   }

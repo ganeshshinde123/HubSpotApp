@@ -1,0 +1,15 @@
+<mat-card *ngFor="let cObj of cusList" >
+    
+    <mat-card-content>{{cObj.username}}</mat-card-content><br/><br/>
+    <!-- <mat-card-content>{{cObj.id}}</mat-card-content> -->
+    <mat-card-content>{{cObj.designation}}</mat-card-content><br/><br/>
+    <mat-card-content>{{cObj.email}}</mat-card-content><br/><br/>
+    <mat-card-content>{{cObj.checkin}}</mat-card-content><br/><br/>
+    <mat-card-content>{{cObj.checkout}}</mat-card-content><br/><br/>
+    <mat-card-content>{{cObj.numberofRooms}}</mat-card-content><br/><br/>
+    <mat-card-content>{{cObj.person}}</mat-card-content><br/><br/>
+    <mat-card-content>{{cObj.location}}</mat-card-content><br/><br/>
+    <mat-card-content>{{cObj.duration}}</mat-card-content><br/><br/>
+    <button (click)="delUser(cObj.bookingId)">deletebook</button>
+</mat-card><br/><br/>
+<button routerLink="/booking">book a meeting</button>
