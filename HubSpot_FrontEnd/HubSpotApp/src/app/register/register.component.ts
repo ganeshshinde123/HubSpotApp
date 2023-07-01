@@ -3,6 +3,8 @@ import { UserserviceService } from '../services/userservice.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Register } from './register';
 import { HttpClient } from '@angular/common/http';
+import { RegisterService } from '../services/register.service';
+import { RouteService } from '../services/route.service';
 
 @Component({
   selector: 'app-register',
@@ -13,17 +15,17 @@ export class RegisterComponent implements OnInit {
    registerform:FormGroup
    registerd:Register
    
-  constructor(private userService:UserserviceService,private regform:FormBuilder,private http:HttpClient){
+  constructor(private regService:RegisterService,private regform:FormBuilder,private http:HttpClient,private route:RouteService){
     
     this.registerd = new Register()
-    
+    // mobileNumber: ['', [Validators.required, Validators.pattern("^((\\+91-?)|0)?[0-9]{10}$")]]
     
     this.registerform = regform.group({
 
       firstName:['',Validators.required],
       lastName:[''],
       email:['',Validators.required],
-      mobileNumber:['',Validators.required],
+      mobileNumber:['', [Validators.required, Validators.pattern("^((\\+91-?)|0)?[0-9]{10}$")]],
       companyName:['',Validators.required],
       age:[,Validators.required],
       gender:[''],
@@ -44,10 +46,10 @@ export class RegisterComponent implements OnInit {
     
   }
   register(){
-    if(this.registerform.valid){
+    // if(this.registerform.valid){
       console.log(this.registerform.value)
-      this.userService.addUser(this.registerform.value).subscribe(
-        data=>{this.registerd = data,alert("Hello "+data.firstName+" \n Welcome to Hubspot.")},
+      this.regService.addUser(this.registerform.value).subscribe(
+        data=>{this.registerd = data,alert("Thank You "+data.firstName+" \n Welcome to Hubspot")},
         err=>{console.log(err)}
       );
     // this.http.post("http://localhost:8080/api/v1/user",this.registerform.value).subscribe(
@@ -56,9 +58,10 @@ export class RegisterComponent implements OnInit {
     // )
     console.log("user service called")
     alert("Hello "+`${this.registerd.firstName}`)
-    console.log(this.registerd)
-    }else{
-      alert("enter the valid details")
-    }
+    console.log(this.registerd);
+    this.route.routeToLogin();
+    //  }else{
+    //   alert("enter the valid details")
+    // }
   }
 }

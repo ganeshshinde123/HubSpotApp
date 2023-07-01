@@ -28,6 +28,16 @@ import { RouteService } from './services/route.service';
 import { RoomServiceService } from './services/room-service.service';
 import { CustomerService } from './services/customer.service';
 import { RoomserviceComponent } from './roomservice/roomservice.component';
+import { PartnersComponent } from './partners/partners.component';
+import { RoomTourComponent } from './room-tour/room-tour.component';
+import { ResourcesComponent } from './resources/resources.component';
+import { HomeLogoutComponent } from './home-logout/home-logout.component';
+import { InvoiceComponent } from './invoice/invoice.component';
+import { PaypalComponent } from './paypal/paypal.component';
+import { PaymentComponent } from './payment/payment.component';
+import { AdminComponent } from './admin/admin.component';
+import { AdminhistoryComponent } from './adminhistory/adminhistory.component';
+import { AdminnextComponent } from './adminnext/adminnext.component';
 
 
 @NgModule({
@@ -44,7 +54,18 @@ import { RoomserviceComponent } from './roomservice/roomservice.component';
     BookmeetComponent,
     AdditemComponent,
     UserProfileComponent,
-    RoomserviceComponent
+    RoomserviceComponent,
+    PartnersComponent,
+    RoomTourComponent,
+    ResourcesComponent,
+    HomeLogoutComponent,
+    InvoiceComponent,
+    PaypalComponent,
+    PaymentComponent,
+    AdminComponent,
+    AdminhistoryComponent,
+    AdminnextComponent,
+   
   ],
   imports: [
     BrowserModule,

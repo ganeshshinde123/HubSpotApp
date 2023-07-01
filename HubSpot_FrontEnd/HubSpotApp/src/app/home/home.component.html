@@ -9,9 +9,9 @@
 </head>
 <body>
     <app-header></app-header>
-    <app-roomservice></app-roomservice>
-    <app-login></app-login>
-    <app-register></app-register>
+    <!-- <app-roomservice></app-roomservice> -->
+    <!-- <app-login></app-login> -->
+    <!-- <app-register></app-register> -->
 
       <section class="text-gray-600 body-font">
         <div class="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
@@ -19,14 +19,19 @@
             <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">Seminar and Meeting
               <br class="hidden lg:inline-block">Lets Book a meeting room
             </h1>
-            <p class="mb-8 leading-relaxed">All resources are available here</p>
+            <p class="mb-8 leading-relaxed">Purpose: Meeting rooms are designed to facilitate effective communication and collaboration among team members, employees, clients, or stakeholders. They serve as spaces for holding meetings, brainstorming sessions, training workshops, presentations, and other collaborative activities.
+
+              Features and Equipment: Meeting rooms are equipped with essential features and equipment to support productive meetings. These may include a conference table, chairs, a whiteboard or flipchart for visual aids, audiovisual equipment such as projectors or screens, video conferencing facilities, and internet connectivity for remote participants.
+              
+              Size and Layout: Meeting rooms come in various sizes, ranging from small rooms suitable for a few individuals to large conference halls capable of accommodating larger groups. The layout of a meeting room may vary depending on the purpose and the desired seating arrangement, such as boardroom style, theater style, U-shape, or classroom style.
+              
+             </p>
             <div class="flex justify-center">
-              <button class="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">Button</button>
-              <button class="ml-4 inline-flex text-gray-700 bg-gray-100 border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded text-lg">Button</button>
+              <button class="ml-4 inline-flex text-gray-700 bg-gray-100 border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded text-lg" (click)="login()">Book Meeting Room</button>
             </div>
           </div>
           <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
-            <img class="object-cover object-center rounded" alt="hero" src="https://source.unsplash.com/720x600/?airpods">
+            <img class="object-cover object-center rounded" alt="hero" src="../../assets/img1.jpg">
           </div>
         </div>
       </section>
@@ -63,16 +68,16 @@
               <label for="message" class="leading-7 text-sm text-gray-600">Message</label>
               <textarea id="message" name="message" class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"></textarea>
             </div>
-            <button class="text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">Button</button>
+            <button class="text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">button</button>
             <p class="text-xs text-gray-500 mt-3">Chicharrones blog helvetica normcore iceland tousled brook viral artisan.</p>
           </div>
         </div>
       </section>
       <hr>
 
-      <app-bookmeet></app-bookmeet>
-      <app-customer></app-customer>
-      <app-bookinghistory></app-bookinghistory>
+      <!-- <app-bookmeet></app-bookmeet> -->
+      <!-- <app-customer></app-customer> -->
+      <!-- <app-bookinghistory></app-bookinghistory> -->
     
       <app-footer></app-footer>
 </body>

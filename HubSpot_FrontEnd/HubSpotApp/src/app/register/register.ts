@@ -1,6 +1,6 @@
 export class Register
 {
-    uId!:number;
+   
     firstName:string=""
     lastName:string=""
     email:string=""

@@ -1,0 +1,13 @@
+<div class="notecard-container"><mat-card class="note-card" *ngFor="let aObj of aList" >
+    <img [src]="aObj.imgurl" />
+    <!-- <mat-card-content>{{aObj.imgurl}}</mat-card-content> -->
+    <!-- <mat-card-content>{{cObj.id}}</mat-card-content> -->
+    <mat-card-content>{{aObj.roomName}}</mat-card-content>
+    <mat-card-content>{{aObj.capacity}}</mat-card-content>
+    <mat-card-content>{{aObj.location}}</mat-card-content>
+    <mat-card-content>{{aObj.price}}</mat-card-content>
+    <mat-card-content>{{aObj.details}}</mat-card-content><br/>
+    <button (click)="delAdmin(aObj.roomId)">deletebook</button>
+</mat-card><br/><br/>
+</div>
+<button routerLink="/crud">Add More Rooms</button>
