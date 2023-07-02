@@ -15,4 +15,5 @@ export class RegisterService {
     return this.httpClient.post<Register>("http://localhost:8082/api/user",rObj);
     
      }
+     
 }

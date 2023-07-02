@@ -3,6 +3,8 @@ import { Customer } from './Customer';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { CustomerService } from '../services/customer.service';
+import { RoomServiceService } from '../services/room-service.service';
+import { Rooms } from '../roomservice/roomd';
 
 @Component({
   selector: 'app-bookmeet',
@@ -13,10 +15,17 @@ export class BookmeetComponent {
   cObj:Customer;
   cusList:Customer[];
   cusForm:FormGroup;
-  constructor(private http:HttpClient,private fb:FormBuilder,private cusservice:CustomerService){
+  roomd:any = "";
+  rp:any 
+  loc:any
+  room:Rooms
+  constructor(private roomserv:RoomServiceService,private http:HttpClient,private fb:FormBuilder,private cusservice:CustomerService){
     this.cObj=new Customer();
     this.cusList=[];
-    
+    this.room=new Rooms()
+    this.roomd=""
+    this.rp=""
+    this.loc=""
     this.cusForm=fb.group({
       // id:"",  
       username:"",
@@ -37,6 +46,10 @@ export class BookmeetComponent {
       noteData => this.cusList = noteData,
       err => console.log(err)
     )
+
+     this.roomd = localStorage.getItem("roomD")
+     this.rp = localStorage.getItem("price")
+     this.loc = localStorage.getItem("loc")
     // this.getCustomersinfo();
   }
   cusBooking(cusForm:FormGroup){
@@ -70,6 +83,8 @@ export class BookmeetComponent {
       console.log(this.cObj.location);
       console.log(this.cObj.duration);
     }
-    
+    // getroom(){
+    //   this.roomserv.getRoomById(this.id);
+    // }
   }
 }

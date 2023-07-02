@@ -1,4 +1,12 @@
-<p>user-profile works!</p>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+  <title>HubSpot</title>
+</head>
+<!-- <body> -->
+  <app-header></app-header>
 <!DOCTYPE html>
 
 <html>
@@ -95,7 +103,8 @@
 
         <ul>
 
-          <li><a class="sidebar-list-item" href="#0"><em>Dashboard</em></a></li>
+          <li><a class="sidebar-list-item" href="#0"><em>Home</em></a></li>
+          <!-- <li><a class="sidebar-list-item" href="#0"><em>Dashboard</em></a></li> -->
 
           <li><a class="sidebar-list-item" href="#0"><em>Users</em></a></li>
 
@@ -103,7 +112,9 @@
 
           <li><a class="sidebar-list-item" href="#0"><em>Suggestions</em></a></li>
 
-          <li><a class="sidebar-list-item" href="#0"><em>Show Booking History</em></a></li>
+          <li><a class="sidebar-list-item" href="#0" routerLink="/bookinghistory"><em>Show Booking History</em></a></li>
+          <li><a class="sidebar-list-item" href="#0" routerLink="/roomservice"><em>Book Meet</em></a></li>
+          
 
         </ul>
 

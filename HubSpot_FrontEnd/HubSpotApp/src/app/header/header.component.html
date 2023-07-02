@@ -1,3 +1,10 @@
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+  <title>HubSpot</title>
+</head>
 <!-- <header class="text-gray-600 body-font">
     <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
       <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
@@ -27,28 +34,31 @@
       <a class="navbar-brand" href="#"><img width="100px" src="../../assets/MicrosoftTeams-image (2).png"  /></a>
       <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page"  routerLink="/service">Services</a>
+           <!-- without login --> 
+            <a class="nav-link active" routerLink="/home">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" routerLink="/industries">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" routerLink="/partner">Location</a>
+            <a class="nav-link active" routerLink="/location">Location</a>
           </li>
           <!-- <li class="nav-item">
             <a class="nav-link active" routerLink="/career">Workplace</a>
           </li> -->
           <li class="nav-item">
-            <a class="nav-link active" routerLink="/aboutus">Roomtour</a>
+            <a class="nav-link active" routerLink="/roomtour">Roomtour</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" routerLink="/homepage">Resources</a>
+            <a class="nav-link active" routerLink="/resource">Resources</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" routerLink="/homepage">Partners</a>
+            <a class="nav-link active" routerLink="/partner">Partners</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page"  routerLink="/faq">FAQ's</a>
           </li>
         </ul>
+        <button class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0" routerLink="/adminLogin">Admin Login</button> 
         <button class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0" routerLink="/login">Login here</button> 
         <button class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0" routerLink="/userprofile">UserProfile
           <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-1" viewBox="0 0 24 24">

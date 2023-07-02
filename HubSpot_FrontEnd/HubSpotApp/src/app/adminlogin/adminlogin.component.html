@@ -17,7 +17,7 @@
       <div class="mb-3 row m-2 ms-1 w-auto">
         <div class="form-floating mb-3 mt-3 ">
           <input type="email" class="form-control rounded-2" id="email" placeholder="name@example.com" formControlName="email">
-          <label for="email" class="ms-3">Email address</label>
+          <label for="email" class="ms-3">Admin email</label>
           <div *ngIf="loginform.controls['email'].errors && loginform.controls['email'].touched" class="error-message">
             <div *ngIf="loginform.controls['email'].errors['required']">Please enter your email.</div>
             <div *ngIf="loginform.controls['email'].errors['email']">Please enter a valid email address.</div>
@@ -35,9 +35,9 @@
             <input type="submit" class="btn btn-outline-primary btn-lg align-self-center align-content-center" [disabled]="loginform.invalid" error="Enter Details" value="Login"/>
           </div>
         </div>
-        <div class="mb-3 row">
+        <!-- <div class="mb-3 row">
           <label class="col-sm-12 text-center"><h3>Don't have an account? <span><h3 href="#" class="text-primary text-capitalize" routerLink="/register">Click Here</h3></span></h3></label>
-        </div>
+        </div> -->
       </div>
     </form>
 </div>

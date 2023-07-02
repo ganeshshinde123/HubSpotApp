@@ -10,7 +10,5 @@ export class HomeLogoutComponent {
 constructor(private route:RouteService){
 
 }
-booking(){
-  this.route.routeToBookMeet();
-}
+
 }

@@ -7,7 +7,6 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
 import { HomeComponent } from './home/home.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
@@ -38,7 +37,14 @@ import { PaymentComponent } from './payment/payment.component';
 import { AdminComponent } from './admin/admin.component';
 import { AdminhistoryComponent } from './adminhistory/adminhistory.component';
 import { AdminnextComponent } from './adminnext/adminnext.component';
+import { AdmindashboardComponent } from './admindashboard/admindashboard.component';
+import {MatSelectModule} from '@angular/material/select';
+import {MatButtonModule} from '@angular/material/button';
 
+import {MatInputModule} from '@angular/material/input';
+import { LocationComponent } from './location/location.component';
+import { FaqComponent } from './faq/faq.component';
+import { AdminloginComponent } from './adminlogin/adminlogin.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +53,7 @@ import { AdminnextComponent } from './adminnext/adminnext.component';
     FooterComponent,
     LoginComponent,
     RegisterComponent,
-    DashboardComponent,
+    
     HomeComponent,
     CustomerComponent,
     BookinghistoryComponent,
@@ -65,6 +71,10 @@ import { AdminnextComponent } from './adminnext/adminnext.component';
     AdminComponent,
     AdminhistoryComponent,
     AdminnextComponent,
+    AdmindashboardComponent,
+    LocationComponent,
+    FaqComponent,
+    AdminloginComponent,
    
   ],
   imports: [
@@ -81,6 +91,10 @@ import { AdminnextComponent } from './adminnext/adminnext.component';
     NgFor,
     MatExpansionModule,
     CommonModule,
+    MatSelectModule,
+    MatButtonModule,
+    MatInputModule
+    
   ],
   providers: [UserserviceService,RouteService,RoomServiceService,CustomerService],
   bootstrap: [AppComponent]

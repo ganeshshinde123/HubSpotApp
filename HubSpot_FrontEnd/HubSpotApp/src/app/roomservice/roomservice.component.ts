@@ -63,9 +63,13 @@ export class RoomserviceComponent implements OnInit{
   }
 
 
-  bookRoom() {
+  bookRoom(detail:any,price:any,loc:any) {
     // Logic to book the room
-    this.router.navigate(['/home']); // Navigate to roombooking page
+    
+    localStorage.setItem("roomD",detail);
+    localStorage.setItem("roomD",price);
+     localStorage.setItem("roomD",loc);
+    this.router.navigate(['/bookingservice']); // Navigate to roombooking page
   }
 
 }

@@ -1,13 +1,24 @@
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <title>HubSpot</title>
+</head>
+<app-header></app-header>
 <div class="notecard-container"><mat-card class="note-card" *ngFor="let aObj of aList" >
     <img [src]="aObj.imgurl" />
+    <div data-aos="flip-left">
+        
     <!-- <mat-card-content>{{aObj.imgurl}}</mat-card-content> -->
     <!-- <mat-card-content>{{cObj.id}}</mat-card-content> -->
-    <mat-card-content>{{aObj.roomName}}</mat-card-content>
+    <mat-card-content>Room Name: {{aObj.roomName}}</mat-card-content>
     <mat-card-content>{{aObj.capacity}}</mat-card-content>
     <mat-card-content>{{aObj.location}}</mat-card-content>
     <mat-card-content>{{aObj.price}}</mat-card-content>
-    <mat-card-content>{{aObj.details}}</mat-card-content><br/>
+    <mat-card-content class="wrapper">{{aObj.details}}</mat-card-content><br/>
     <button (click)="delAdmin(aObj.roomId)">deletebook</button>
+    </div>
 </mat-card><br/><br/>
 </div>
 <button routerLink="/crud">Add More Rooms</button>

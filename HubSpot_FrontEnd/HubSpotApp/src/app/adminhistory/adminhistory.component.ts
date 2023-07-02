@@ -3,7 +3,7 @@ import { Admin } from '../admin/Admin';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { AdminService } from '../services/admin.service';
-
+import * as AOS from 'aos';
 @Component({
   selector: 'app-adminhistory',
   templateUrl: './adminhistory.component.html',
@@ -37,6 +37,7 @@ export class AdminhistoryComponent {
   // }
   ngOnInit(): void {
     this.getAdmininfo();
+    AOS.init();
   }
   private getAdmininfo(){
     this.adminservice.getAdmin().subscribe(data => {

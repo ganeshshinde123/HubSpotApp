@@ -1,4 +1,12 @@
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+  <title>HubSpot</title>
+</head>
 <!-- <body> -->
+  <app-header></app-header>
 <div class="body">
   <div class="container">
 
@@ -22,7 +30,9 @@
 
       <div class="contact">
 
-        <h3>Email Us</h3>
+        <!-- <h3>Room details : {{}}</h3> -->
+        <h3> Room price : {{rp}} </h3>
+        <h3> room location : {{roomd}}</h3>
 
         <form id="contactForm" [formGroup]="cusForm" (ngSubmit)="cusBooking(cusForm)">
 
@@ -70,7 +80,7 @@
 
             <label>No. of Room</label>
 
-            <input type="number" formControlName="numberofRooms" id="phone">
+            <input type="number" formControlName="numberofRooms" readonly value={{roomd}} id="phone">{{roomd}}
 
           </p>
 
@@ -84,7 +94,7 @@
 
           location:<mat-form-field>
 
-            <mat-label>Cars</mat-label>
+            <mat-label>Places</mat-label>
 
             <select matNativeControl required formControlName="location">
 
@@ -110,7 +120,7 @@
 
           <p class="full">
 
-            <button type="submit">Submit</button>
+            <button type="submit" class="" routerLink="/payment">Submit</button>
 
           </p>
 

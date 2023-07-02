@@ -1,4 +1,4 @@
-<p>room service works</p>
+<app-header></app-header>
 <div class="container">
   <div *ngFor="let room of rList">
       <div style="margin: 100px; width: 100%; height:100% ">
@@ -26,7 +26,7 @@
             </b>
             <mat-action-row>
               <button mat-button color="warn" (click)="getRoomById(room.roomId)"></button>
-              <button mat-button color="success" (click)="bookRoom()">Book Now</button>
+              <button mat-button color="success" (click)="bookRoom(room.details,room.price,room.location)">Book Now</button>
             </mat-action-row> 
           </mat-expansion-panel>
         </mat-accordion>
