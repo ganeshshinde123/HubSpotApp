@@ -3,7 +3,7 @@
 import { Component } from '@angular/core';
 import { Admin } from './Admin';
 import { HttpClient } from '@angular/common/http';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AdminService } from '../services/admin.service';
 
 @Component({
@@ -22,13 +22,14 @@ export class AdminComponent {
     
     this.aForm=fb.group({
       // id:"",  
-      roomName:"",
-      capacity:"",
-      location:"",
-      alternatecontactnumber:"",
-      price:"",
-      details:"",
-      imgurl:""
+      // 
+      roomName:['',Validators.required],
+      capacity:['',Validators.required],
+      location:['',Validators.required],
+      alternatecontactnumber:['',Validators.required,Validators.pattern("^((\\+91-?)|0)?[0-9]{10}$")],
+      price:["",Validators.required],
+      details:["",Validators.required],
+      imgurl:['',Validators.required]
     })
   }
  

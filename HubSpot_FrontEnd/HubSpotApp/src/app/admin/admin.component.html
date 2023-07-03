@@ -5,7 +5,7 @@
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
     <title>HubSpot</title>
 </head>
-<app-header></app-header>
+<app-adminheader></app-adminheader>
 <!-- 
 <form [formGroup]="cusForm" (ngSubmit)="cusBooking(cusForm)">
     id:<input type="text" formControlName="id"/>
@@ -22,15 +22,16 @@
 <button routerLink="/bookinghistory">Booking history</button> -->
 <!-- <h1>{{imageLink}}</h1 -->
     <div *ngFor="let aObj of aList">
-        <img [src]="aObj.imgurl" />
+        <!-- <img [src]="aObj.imgurl" /> -->
     </div>
 
 <div class="page-content page-container" id="page-content">
-    <div class="padding">
-        <button class="btn-3d" routerLink="/adminview">Order history</button>
+    <div class="bg-blend-color-burn">
+        <button class="btn-3d" routerLink="/adminview">All Rooms</button>
+        
         <div class="row container d-flex justify-content-center">
 <div class="col-md-6 col-lg-4">
-            <form class="card" [formGroup]="aForm" (ngSubmit)="adminBooking(aForm)">
+            <!-- <form class="card" [formGroup]="aForm" (ngSubmit)="adminBooking(aForm)">
               <h5 class="card-title fw-400">Enter Delivery Address</h5>
 
               <div class="card-body">
@@ -54,9 +55,66 @@
                 <div class="form-group">
                     Imgurl<input class="form-control" formControlName="imgurl" type="text" placeholder="Paste Image Url">
                 </div>
-                <button class="btn btn-block btn-bold btn-primary" >Add Room</button>
+                <button class="btn btn-block btn-bold btn-primary">Add Room</button>
               </div>
-            </form>
+            </form> -->
+            <form class="card" [formGroup]="aForm" (ngSubmit)="adminBooking(aForm)">
+                <h5 class="card-title fw-400">Enter Delivery Address</h5>
+  
+                <div class="card-body">
+                  <div class="form-group">
+                      Room Type<input class="form-control" formControlName="roomName" type="text" placeholder="Enter Room Name">
+                      <div *ngIf="aForm.controls['roomName'].invalid && (aForm.controls['roomName'].dirty || aForm.controls['roomName'].touched)"
+                          class="error-message">
+                          <span *ngIf="aForm.controls['roomName'].errors"  class="text-danger">room Name is required.</span>
+                      </div>
+                  </div>
+  
+                  <div class="form-group">
+                      Capacity<input class="form-control" formControlName="capacity" type="number" placeholder="Enter Capacity of seating">
+                      <div *ngIf="aForm.controls['capacity'].invalid && (aForm.controls['capacity'].dirty ||  aForm.controls['capacity'].touched)"
+                          class="error-message">
+                          <span *ngIf="aForm.controls['capacity'].errors"  class="text-danger">capacity Name is required.</span>
+                      </div>
+                  </div>
+  
+                  <div class="form-group">
+                      Location<input class="form-control" formControlName="location" type="text" placeholder="Choose Location">
+                      <div *ngIf="aForm.controls['location'].invalid && (aForm.controls['location'].dirty || aForm.controls['location'].touched)"
+                          class="error-message">
+                          <span *ngIf="aForm.controls['location'].errors" class="text-danger">
+                              Enter the location
+                          </span>
+                      </div>
+                  </div>
+                  <div class="form-group">
+                      Price<input class="form-control" formControlName="price" type="number" placeholder="Enter Price">
+                      <div *ngIf="aForm.controls['price'].invalid && (aForm.controls['price'].dirty || aForm.controls['price'].touched)"
+                          class="error-message">
+                          <span *ngIf="aForm.controls['price'].errors" class="text-danger">
+                              Enter the Price
+                          </span>   
+                      </div>
+                  </div>
+                  <div class="form-group">
+                      Details<input class="form-control" formControlName="details" type="text" placeholder="name">
+                      <div *ngIf="aForm.controls['details'].invalid && (aForm.controls['details'].dirty || aForm.controls['details'].touched)" class="error-message">
+                          <span *ngIf="aForm.controls['details'].errors" class="text-danger">
+                              Enter Details
+                          </span>
+                      </div>
+                  </div>
+                  <div class="form-group">
+                      Imgurl<input class="form-control" formControlName="imgurl" type="text" placeholder="Paste Image Url">
+                      <div *ngIf="aForm.controls['imgurl'].invalid &&(aForm.controls['imgurl'].dirty || aForm.controls['imgurl'].touched)" class="error-message">
+                          <span *ngIf="aForm.controls['imgurl'].errors" class="text-danger">
+                              Paste Valid Url
+                          </span>
+                      </div>
+                  </div>
+                  <button class="btn btn-block btn-bold btn-primary" >Add Room</button>
+                </div>
+              </form>
           </div>
            </div>
             </div>

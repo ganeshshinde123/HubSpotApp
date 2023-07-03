@@ -30,6 +30,8 @@ export class AdminloginComponent {
       // )
       if(this.adminUser.email == "admin@gmail.com" && this.adminUser.password=="password"){
         this.rooute.routeToAdminDash();
+      }else{
+        alert("your not Autherised to login here")
       }
      }else{
       console.log("wrong detaiils")

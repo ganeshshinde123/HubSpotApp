@@ -1,100 +1,7 @@
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
-  <title>HubSpot</title>
-</head>
-<!-- <body> -->
-  <app-header></app-header>
-<!DOCTYPE html>
-
-<html>
-
-<head>
-
-  <!-- <style>
-
-    body, html {
-
-      height: 100%;
-
-      margin: 0;
-
-      font-family: Arial, sans-serif;
-
-    }
-
-
-
-
-    .parallax {
-
-      /* The image used */
-
-      background-image: url("../../assets/meetingroo1.jfif");
-
-   
-
-      /* Set a specific height */
-
-      min-height: 100vh;
-
-   
-
-      /* Create the parallax scrolling effect */
-
-      background-attachment: fixed;
-
-      background-position: center;
-
-      background-repeat: no-repeat;
-
-      background-size: cover;
-
-    }
-
-
-
-
-    .layout {
-
-      display: flex;
-
-      height: 100%;
-
-    }
-
-
-
-
-    .sidebar {
-
-      background-color: #f2f2f2;
-
-      padding: 20px;
-
-      flex: 0 0 25%;
-
-    }
-
-
-
-
-    .content {
-
-      padding: 20px;
-
-      flex: 1;
-
-    }
-
-  </style> -->
-
-</head>
 
 <body>
-
+  <button class="bg-300"> value</button><br>
+  <p></p><p></p>
   <div class="parallax">
 
     <div class="layout">
@@ -103,16 +10,16 @@
 
         <ul>
 
-          <li><a class="sidebar-list-item" href="#0"><em>Home</em></a></li>
+          <li><a class="sidebar-list-item" href="#0" routerLink="/logouthome"><em>Home</em></a></li>
           <!-- <li><a class="sidebar-list-item" href="#0"><em>Dashboard</em></a></li> -->
+<!-- 
+          <li><a class="sidebar-list-item" href="#0"><em>Users</em></a></li> -->
 
-          <li><a class="sidebar-list-item" href="#0"><em>Users</em></a></li>
+          <li><a class="sidebar-list-item" href="#0" routerLink="/feedback"><em>Feedback</em></a></li>
 
-          <li><a class="sidebar-list-item" href="#0"><em>Feedback</em></a></li>
+          <li><a class="sidebar-list-item" href="#0" routerLink="/feedback"><em>Suggestions</em></a></li>
 
-          <li><a class="sidebar-list-item" href="#0"><em>Suggestions</em></a></li>
-
-          <li><a class="sidebar-list-item" href="#0" routerLink="/bookinghistory"><em>Show Booking History</em></a></li>
+          <li><a class="sidebar-list-item" href="#0" routerLink="/custhist"><em>Show Booking History</em></a></li>
           <li><a class="sidebar-list-item" href="#0" routerLink="/roomservice"><em>Book Meet</em></a></li>
           
 
@@ -157,4 +64,3 @@
 
 </body>
 
-</html>

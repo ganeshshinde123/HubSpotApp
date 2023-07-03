@@ -20,6 +20,11 @@ import { AdminloginComponent } from './adminlogin/adminlogin.component';
 import { PaymentComponent } from './payment/payment.component';
 import { InvoiceComponent } from './invoice/invoice.component';
 import { PaypalComponent } from './paypal/paypal.component';
+import { AdditemComponent } from './additem/additem.component';
+import { SettingsComponent } from './settings/settings.component';
+import { AdminnextComponent } from './adminnext/adminnext.component';
+import { FeedbackComponent } from './feedback/feedback.component';
+import { CustHistroyComponent } from './cust-histroy/cust-histroy.component';
 
 const routes: Routes = [
   {path:"",redirectTo:"home",pathMatch:"full"},
@@ -40,10 +45,14 @@ const routes: Routes = [
   {path:"resource",component:ResourcesComponent},
   {path:"partner",component:PartnersComponent},
   {path:"location",component:LocationComponent},
+  {path:"feedback",component:FeedbackComponent},
   {path:"admindash",component:AdmindashboardComponent},
   {path:"adminLogin",component:AdminloginComponent},
   {path:"payment",component:PaypalComponent},
   {path:"invoice",component:InvoiceComponent},
+  {path:"adminadditem",component:AdditemComponent},
+  {path:"settings",component:SettingsComponent},
+  {path:"custhist",component:CustHistroyComponent},
  
   {path:"logouthome",component:HomeLogoutComponent},
   {path:"adminview",component:AdminhistoryComponent},

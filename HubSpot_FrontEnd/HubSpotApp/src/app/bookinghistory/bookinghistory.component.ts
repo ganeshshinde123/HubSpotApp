@@ -12,11 +12,13 @@ import { CustomerService } from '../services/customer.service';
 })
 export class BookinghistoryComponent {
   cObj:Customer;
+  currentCustomer:Customer[]
   cusList:Customer[];
   cusForm:FormGroup;
   constructor(private http:HttpClient,private fb:FormBuilder,private cusservice:CustomerService){
     this.cObj=new Customer();
     this.cusList=[];
+    this.currentCustomer=[];
     this.cusForm=fb.group({
       // id:"",  
       username:"",
@@ -40,6 +42,7 @@ export class BookinghistoryComponent {
   // }
   ngOnInit(): void {
     this.getCustomersinfo();
+  
   }
   private getCustomersinfo(){
     this.cusservice.getCustomer().subscribe(data => {
@@ -60,6 +63,6 @@ export class BookinghistoryComponent {
     // var resp= this.cusservice.deleteCustomer(bookingId);
     // resp.subscribe((data)=>this.cObj=data);
     
-   }
 
+    }
 }

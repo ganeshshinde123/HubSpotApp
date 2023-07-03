@@ -49,14 +49,15 @@ export class AdminhistoryComponent {
     console.log(this.aList)
     this.getAdmininfo();
     this.adminservice.deleteAdmin(roomId).subscribe(
-      
+     
       (resp) => {
       //  this.ngOnInit();
-        this.getAdmininfo();
+        this.getAdmininfo(),
+        alert("Room Deleted Successfully..");
       }
     );
     // var resp= this.cusservice.deleteCustomer(bookingId);
     // resp.subscribe((data)=>this.cObj=data);
-    
+    alert("Room Deleted Successfully..")
    }
 }

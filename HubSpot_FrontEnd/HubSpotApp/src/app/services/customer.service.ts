@@ -10,6 +10,12 @@ import { Customer } from '../customer/Customer';
 export class CustomerService {
   delUrl:String="http://localhost:8083/book/v1/delete";
   constructor(private http:HttpClient) { }
+  setId(token:string){
+    localStorage.setItem("id",token);
+  }
+  getId(){
+    return localStorage.getItem("id");
+  }
   getCustomer():Observable<Customer[]>{
     return this.http.get<Customer[]>("http://localhost:8083/book/v1/getAllcus");
   }
@@ -20,6 +26,12 @@ export class CustomerService {
     return this.http.post<Customer>("http://localhost:8083/book/v1/addCustomer",cObj);
   }
   deleteCustomer(id:any):Observable<Customer>{
+    this.setId(id);
     return this.http.delete<Customer>(`${this.delUrl}/${id}`);
   }
-}
+  getCustomerByEmail():Observable<Customer[]>{
+    return this.http.get<Customer[]>(`http://localhost:8083/book/v1/getcusbyid/${this.getId()}`);
+  }
+  }
+
+

@@ -17,11 +17,14 @@ export class AdditemComponent {
  total=0;
  updateTotal(item:any){
   if(item.isChecked){
-    this.total += item.value;
+    this.total += item.value*7;
   }else{
-    this.total -= item.value;
+    this.total -= item.value*7;
   }
-  console.log("total cost is"+this.total);
+  // console.log("total cost is"+this.total);
+ 
+  localStorage.setItem("total",`${this.total}`);
+  console.log(localStorage.getItem("total"))
  }
 
 }

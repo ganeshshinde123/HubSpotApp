@@ -1,11 +1,4 @@
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
-  <title>HubSpot</title>
-</head>
-<!-- <body> -->
+
   <app-header></app-header>
 <div class="body">
   <div class="container">
@@ -24,16 +17,18 @@
 
           <li><i class="fa fa-envelope"></i> Hubspot@gmail.com</li>
 
+         
         </ul>
-
+        <img src="{{room.imgurl}}" alt="no image for this room">
+        Room details : <p class="text-primary font-medium">{{room.details}}</p>
       </div>
 
       <div class="contact">
 
-        <!-- <h3>Room details : {{}}</h3> -->
-        <h3> Room price : {{rp}} </h3>
-        <h3> room location : {{roomd}}</h3>
-
+        <h3 class="" > Room Name : <span class="font-size text-primary">{{room.roomName}}</span> </h3>
+        <h3> Room price : <span class="font-size text-primary">{{room.price}} </span></h3>
+        <h3> room location : <span class="font-size text-primary">{{room.location}}</span></h3>
+        <h3></h3>
         <form id="contactForm" [formGroup]="cusForm" (ngSubmit)="cusBooking(cusForm)">
 
           <p>
@@ -56,7 +51,7 @@
 
             <label>Email</label>
 
-            <input type="text" formControlName="email" id="email">
+            <input type="text" formControlName="email" id="email" value="">
 
           </p>
 
@@ -80,7 +75,7 @@
 
             <label>No. of Room</label>
 
-            <input type="number" formControlName="numberofRooms" readonly value={{roomd}} id="phone">{{roomd}}
+            <input type="number" formControlName="numberofRooms"   id="phone">
 
           </p>
 
@@ -91,8 +86,10 @@
             <input type="number" formControlName="person" id="phone">
 
           </p>
-
-          location:<mat-form-field>
+          <p class="full">
+          location: <input type="text" name="loaction" formControlName="location" id="loc" readonly value="{{room.location}}">
+          </p>
+          <!-- <mat-form-field>
 
             <mat-label>Places</mat-label>
 
@@ -108,7 +105,7 @@
 
             </select>
 
-          </mat-form-field>
+          </mat-form-field> -->
 
           <p class="full">
 
@@ -117,10 +114,11 @@
             <input type="text" formControlName="duration" id="phone">
 
           </p>
-
+          <app-additem></app-additem>
+          
           <p class="full">
 
-            <button type="submit" class="" routerLink="/payment">Submit</button>
+            <button type="submit">Submit</button>
 
           </p>
 
@@ -136,4 +134,4 @@
 
  
 
-<!-- </body> -->
+

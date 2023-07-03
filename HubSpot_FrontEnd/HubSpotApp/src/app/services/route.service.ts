@@ -34,4 +34,7 @@ export class RouteService {
   routeToAdminCRUD(){
    this.router.navigate(['crud']);
   }
+  routeToPayment(){
+    this.router.navigate(['payment'])
+  }
 }

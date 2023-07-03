@@ -57,7 +57,7 @@ export class RegisterComponent implements OnInit {
     //   err=>{console.log(err)}
     // )
     console.log("user service called")
-    alert("Hello "+`${this.registerd.firstName}`)
+    alert("Registration Successfull.. "+`${this.registerd.firstName}`)
     console.log(this.registerd);
     this.route.routeToLogin();
     //  }else{

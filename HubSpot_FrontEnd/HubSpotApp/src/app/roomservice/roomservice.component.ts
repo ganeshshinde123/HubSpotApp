@@ -48,7 +48,7 @@ export class RoomserviceComponent implements OnInit{
   }
 
     getRoomById(roomId: any) {
-      this.roomservice.getRoomById(roomId).subscribe(roomData => {
+     return this.roomservice.getRoomById(roomId).subscribe(roomData => {
         console.log(roomData);
       })
     }
@@ -63,12 +63,13 @@ export class RoomserviceComponent implements OnInit{
   }
 
 
-  bookRoom(detail:any,price:any,loc:any) {
+  bookRoom(id:string) {
     // Logic to book the room
     
-    localStorage.setItem("roomD",detail);
-    localStorage.setItem("roomD",price);
-     localStorage.setItem("roomD",loc);
+    // localStorage.setItem("roomD",detail);
+    localStorage.setItem("rid",id);
+    // localStorage.setItem("roomD",price);
+    //  localStorage.setItem("roomD",loc);
     this.router.navigate(['/bookingservice']); // Navigate to roombooking page
   }
 

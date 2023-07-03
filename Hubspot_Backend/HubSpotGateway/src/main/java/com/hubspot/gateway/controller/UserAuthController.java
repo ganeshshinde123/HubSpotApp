@@ -23,7 +23,7 @@ import jakarta.servlet.ServletException;
 
 @RestController
 @RequestMapping
-@CrossOrigin(origins ="**", maxAge = 5000)
+@CrossOrigin(origins ="http://localhost:4200", maxAge = 5000)
 public class UserAuthController {
 	
 	private Map<String,String> map = new HashMap<>();

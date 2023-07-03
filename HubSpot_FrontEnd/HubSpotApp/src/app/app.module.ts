@@ -45,6 +45,11 @@ import {MatInputModule} from '@angular/material/input';
 import { LocationComponent } from './location/location.component';
 import { FaqComponent } from './faq/faq.component';
 import { AdminloginComponent } from './adminlogin/adminlogin.component';
+import { AdminheaderComponent } from './adminheader/adminheader.component';
+import { SettingsComponent } from './settings/settings.component';
+import { FeedbackComponent } from './feedback/feedback.component';
+import { CustHistroyComponent } from './cust-histroy/cust-histroy.component';
+import { HomeheaderComponent } from './homeheader/homeheader.component';
 
 @NgModule({
   declarations: [
@@ -75,6 +80,11 @@ import { AdminloginComponent } from './adminlogin/adminlogin.component';
     LocationComponent,
     FaqComponent,
     AdminloginComponent,
+    AdminheaderComponent,
+    SettingsComponent,
+    FeedbackComponent,
+    CustHistroyComponent,
+    HomeheaderComponent,
    
   ],
   imports: [

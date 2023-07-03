@@ -185,16 +185,16 @@
         </div>
         <div class="card-item icon-relative">
           <label class="label">CVC:</label>
-          <input type="number" class="input" data-mask="000" placeholder="000">
+          <input type="password" class="input" data-mask="000" placeholder="000">
           <i class="fas fa-lock"></i>
         </div>
       </div>
          <div class="card-item icon-relative">
           <label class="label">Amount:</label>
-          <input type="number" class="input" data-mask="000" placeholder="000">
+          <input type="number" class="input" data-mask="000" placeholder="000" readonly value="{{tt}}">
           <i class="fa fa-rupee"></i>
         </div>
-      <div class="btn" routerLink="/invoice">
+      <div class="btn" routerLink="/invoice" (click)="addBooking()">
         Pay
       </div> 
       
