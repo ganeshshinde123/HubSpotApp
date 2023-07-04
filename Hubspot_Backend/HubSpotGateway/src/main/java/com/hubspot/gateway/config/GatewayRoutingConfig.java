@@ -19,8 +19,7 @@ public class GatewayRoutingConfig {
 //		return builder.routes()
 //				.route("UserId", r -> r.path("/api/v2/**").uri("http://localhost:8081"))
 //				.route("NoteId", r -> r.path("/api/v1/**").uri("http://localhost:8080"))
-//				.build();
-		
+//				.build();	
 //		Dynamic Route
 		return builder.routes()
 				.route("Login", r -> r.path("/auth/user/**").uri("http://localhost:8081"))
