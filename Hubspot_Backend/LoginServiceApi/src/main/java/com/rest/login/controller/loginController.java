@@ -11,19 +11,21 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.rest.login.fiegnClient.ConsumerRestRegister;
 import com.rest.login.model.User;
 
+import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import jakarta.servlet.ServletException;
 
 @RestController
-@RequestMapping("auth/user")
-@CrossOrigin(origins ="http://localhost:4200", maxAge = 5000)
+@RequestMapping("/auth/user")
+@CrossOrigin("*")
 public class loginController {
 	private Map<String,String> map = new HashMap<>();
 
@@ -37,6 +39,34 @@ public class loginController {
 		return "Authentication Server Started";
 	}
 	
+	private static final String SECRET_KEY = "secret key";
+
+    @PostMapping("/isAuthenticated")
+
+    public ResponseEntity<?> authorizeRequest(@RequestHeader("Authorization") String token) {
+
+        try {
+              String jwtToken = token.substring(7);
+              
+            Claims claims = Jwts.parser().setSigningKey("secret key").parseClaimsJws(jwtToken).getBody();
+
+            System.out.println("code");
+
+            String username = claims.getSubject();
+
+            String role = (String) claims.get("role");
+
+            return new ResponseEntity<>(true, HttpStatus.OK);
+
+        } catch (Exception e) {
+
+            e.printStackTrace();
+
+            return new ResponseEntity<>(false,HttpStatus.UNAUTHORIZED);
+
+        }
+
+    }
 	
 	@PostMapping("/authUser")
 	public ResponseEntity<?> doLogin(@RequestBody User user){

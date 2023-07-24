@@ -1,0 +1,39 @@
+#server:
+#  port: 8080
+#
+#spring:
+#  application:
+#    name: api-gateway-service
+#
+#eureka:
+#  client:
+#    register-with-eureka: false
+#    fetch-registry: false
+#
+## Route configuration
+#spring.cloud.gateway:
+#  routes:
+#     - id: user-login-service-route
+#       uri: http://localhost:8081
+#      predicates:
+#        - Path=/auth/user/**
+#      
+#    - id: register-service-route
+#      uri: http://localhost:8082
+#      predicates:
+#        - Path=/register/**
+#
+#    - id: room-service-route
+#      uri: http://localhost:8084
+#      predicates:
+#        - Path=/rooms/**
+#
+#    - id: booking-service-route
+#      uri: http://localhost:8083
+#      predicates:
+#        - Path=/bookings/**
+#
+#    - id: admin-service-route
+#      uri: http://localhost:8085
+#      predicates:
+#        - Path=/admin/**

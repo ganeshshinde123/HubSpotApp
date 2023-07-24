@@ -1,21 +1,22 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { User } from '../login/User';
 import { Register } from '../register/register';
-import { Observable } from 'rxjs';
+import { Observable, catchError, map, of } from 'rxjs';
 import { RouteService } from './route.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserserviceService {
+ 
   result:User
   users:User[];
   user:Register
   BearerToken:String;
   foundUser: User | undefined;
 
-  UserUrl :string="http://localhost:8080/auth/user/authUser"; 
+  UserUrl :string="http://localhost:8080/logauth/user/authUser"; 
 
   constructor(private httpClient:HttpClient,private router:RouteService) { 
     this.users=[];
@@ -23,36 +24,19 @@ export class UserserviceService {
    this.result=new User();
    this.user=new Register();
   }
-  
-  //http://localhost:8081/auth/user/authUser
-
-  // dologin(uObj:User):Observable<User>{
-  //   console.log(uObj.email)
-  //   return this.httpClient.post<User>(this.UserUrl,uObj);
-    
-  // }
-  
-
-  
  
   ngOnInit(){
-    // this.http.get<User[]>("http://localhost:8080/api/v3/user").subscribe(
-    //   data=>{this.users=data, console.log(this.users)},
-    //   err=>err
-    // )
-    // console.log("hello after"+this.users);
+    
   }
-  
-  
-  
+
   dologin(user:User):Observable<User>{
-      return this.httpClient.post<User>("http://localhost:8081/auth/user/authUser",user);
+      return this.httpClient.post<User>("http://localhost:8080/auth/user/authUser",user);
   }
   setBearerToken(token:string){
-    localStorage.setItem("bearer Token",token);
+    localStorage.setItem("Bearer ",token);
   }
   getBearerToken(){
-    return localStorage.getItem("bearer Token");
+    return localStorage.getItem("Bearer ");
   }
   setEmail(token:string){
     localStorage.setItem("email",token);
@@ -61,5 +45,31 @@ export class UserserviceService {
     return localStorage.getItem("email");
   }
 
-  
+
+  isUserAuthenticated():Observable<boolean>{
+    const token = this.getBearerToken();
+    console.log("is called"+ token)
+    return this.httpClient.post<boolean>(`http://localhost:8081/auth/user/isAuthenticated`,{},{
+      headers: new HttpHeaders().set('Authorization',`Bearer ${token}`)
+      })
+      .pipe(
+         map(response => {
+          console.log(response)
+              if (response == true) {
+                console.log("Activated..");
+                   return true;
+              } else {
+                console.log("false deactivating")
+              return false;
+        }}
+      ), 
+      catchError(() => of(false)) 
+    );
+  }
+  getProfile(){
+    return this.httpClient.get<Register>(`http://localhost:8082/api/v3/getUser/${this.getEmail()}`);
+  }
+  updateProf(reg:Register){
+    return this.httpClient.put<Register>(`http://localhost:8082/api/v3/updateUser/${this.getEmail()}`,reg);
+  }
 }

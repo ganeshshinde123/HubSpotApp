@@ -1,3 +1,4 @@
+import { Location } from '@angular/common';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -6,7 +7,7 @@ import { Router } from '@angular/router';
 })
 export class RouteService {
 
-  constructor(private router:Router) { }
+  constructor(private router:Router,private location:Location) { }
   routeToLogin(){
     this.router.navigate(['login'])
  }
@@ -36,5 +37,14 @@ export class RouteService {
   }
   routeToPayment(){
     this.router.navigate(['payment'])
+  }
+  routeToLow(){
+    this.router.navigate([''])
+  }
+  routeToupdateUser(){
+    this.router.navigate(['userUpdate']);
+  }
+  routeBack(){
+    this.location.back();
   }
 }

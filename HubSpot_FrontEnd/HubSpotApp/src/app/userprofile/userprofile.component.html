@@ -1,0 +1,46 @@
+<app-homeheader></app-homeheader>
+<div class="profile">
+    <h2>User Profile</h2>
+    <div class="profile-info">
+        <div class="profile-image">
+          <img src="../../assets/wipro-logo-design.jpg" alt="User Profile Image" />
+        </div>
+        <div class="field">
+          <label>First Name:</label>
+          <span>{{ user.firstName }}</span>
+        </div>
+    
+     
+      <div class="field">
+        <label>Last Name:</label>
+        <span>{{ user.lastName }}</span>
+      </div>
+      <div class="field">
+        <label>Email:</label>
+        <span>{{ user.email }}</span>
+      </div>
+      <div class="field">
+        <label>Mobile Number:</label>
+        <span>{{ user.mobileNumber }}</span>
+      </div>
+      <div class="field">
+        <label>Company Name:</label>
+        <span>{{ user.companyName }}</span>
+      </div>
+      <div class="field">
+        <label>Age:</label>
+        <span>{{ user.age }}</span>
+      </div>
+      <div class="field">
+        <label>Gender:</label>
+        <span>{{ user.gender }}</span>
+      </div>
+  
+    </div>
+    <div class="field" style="float: center;">
+    <button class="btn btn btn-outline-info btn-primary" (click)="updateProf()" routerLink="/userP">
+        Update info
+    </button>
+    </div>
+  </div>
+  

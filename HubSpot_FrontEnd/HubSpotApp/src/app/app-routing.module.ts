@@ -25,16 +25,19 @@ import { SettingsComponent } from './settings/settings.component';
 import { AdminnextComponent } from './adminnext/adminnext.component';
 import { FeedbackComponent } from './feedback/feedback.component';
 import { CustHistroyComponent } from './cust-histroy/cust-histroy.component';
+import { AuthGuard } from './auth.guard';
+import { UserprofileComponent } from './userprofile/userprofile.component';
+import { ProfUpdateComponent } from './prof-update/prof-update.component';
 
 const routes: Routes = [
   {path:"",redirectTo:"home",pathMatch:"full"},
   // {path:"" , redirectTo="homelogout", pathMatch:"full"}
 
   {path:"home",component:HomeComponent,
-    // children:[{path:"userprofile" , component:UserProfileComponent}]
+    children:[{path:"userprofile" , component:UserProfileComponent,outlet:'home-up'}]
   },
   
-  {path:"userprofile",component:UserProfileComponent},
+  {path:"home/userprofile",component:UserProfileComponent},
   {path:"login",component:LoginComponent},
   {path:"register",component:RegisterComponent},
   {path:"roomservice",component:RoomserviceComponent},
@@ -46,7 +49,7 @@ const routes: Routes = [
   {path:"partner",component:PartnersComponent},
   {path:"location",component:LocationComponent},
   {path:"feedback",component:FeedbackComponent},
-  {path:"admindash",component:AdmindashboardComponent},
+  {path:"admindash",component:AdmindashboardComponent,canActivate:[AuthGuard]},
   {path:"adminLogin",component:AdminloginComponent},
   {path:"payment",component:PaypalComponent},
   {path:"invoice",component:InvoiceComponent},
@@ -59,6 +62,8 @@ const routes: Routes = [
   {path:"crud",component:AdminComponent},
   {path:"faq",component:FaqComponent},
   {path:"faq",component:AdminComponent},
+  {path:"userP",component:UserprofileComponent},
+  {path:"userUpdate",component:ProfUpdateComponent},
 
 ];
 

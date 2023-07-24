@@ -23,7 +23,7 @@ import com.reg.api.service.IUserService;
 
 @RestController
 @RequestMapping("/api")
-@CrossOrigin(origins ="http://localhost:4200", maxAge = 5000)
+@CrossOrigin("*")
 public class UserController {
 		
 	

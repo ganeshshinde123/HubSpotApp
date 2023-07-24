@@ -20,7 +20,7 @@ import com.rest.mongo.service.IRoomService;
 
 @RestController
 @RequestMapping("/room")
-@CrossOrigin(origins ="http://localhost:4200", maxAge = 5000)
+@CrossOrigin(origins ="*")
 public class RoomController
 {
     @Autowired

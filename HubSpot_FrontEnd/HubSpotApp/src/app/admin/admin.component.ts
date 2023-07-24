@@ -26,7 +26,7 @@ export class AdminComponent {
       roomName:['',Validators.required],
       capacity:['',Validators.required],
       location:['',Validators.required],
-      alternatecontactnumber:['',Validators.required,Validators.pattern("^((\\+91-?)|0)?[0-9]{10}$")],
+      // alternatecontactnumber:['',Validators.required,Validators.pattern("^((\\+91-?)|0)?[0-9]{10}$")],
       price:["",Validators.required],
       details:["",Validators.required],
       imgurl:['',Validators.required]

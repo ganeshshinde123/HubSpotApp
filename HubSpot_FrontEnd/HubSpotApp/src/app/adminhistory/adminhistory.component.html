@@ -11,14 +11,14 @@
     <!-- <mat-card-content>{{aObj.imgurl}}</mat-card-content> -->
     <!-- <mat-card-content>{{cObj.id}}</mat-card-content> -->
     <mat-card-content><h3>Room Name: {{aObj.roomName}}</h3></mat-card-content>
-    <img [src]="aObj.imgurl" />
+    <img [src]="aObj.imgurl" style="height: 300px; width: 600px;" />
     <div data-aos="flip-left">
     <mat-card-content><h3>Room Capacity: {{aObj.capacity}}</h3></mat-card-content>
     <mat-card-content><h3>Room Location: {{aObj.location}}</h3> </mat-card-content>
     <mat-card-content><h3>Room value/Price : {{aObj.price}}</h3></mat-card-content>
     <mat-card-content class="wrapper"><h3>Room Details : </h3> <span class="text text-dark">{{aObj.details}}</span></mat-card-content><br/>
    
-    <button class="btn btn-danger" (click)="delAdmin(aObj.roomId)">Delete Room</button>
+    <button class="btn btn-danger end"  (click)="delAdmin(aObj.roomId)">Delete Room</button>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <!-- <button class="btn btn-primary" (click)="delAdmin(aObj.roomId)">Update Room</button> -->
 

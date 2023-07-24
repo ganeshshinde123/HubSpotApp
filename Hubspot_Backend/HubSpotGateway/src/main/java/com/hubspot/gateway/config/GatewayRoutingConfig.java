@@ -3,9 +3,11 @@ package com.hubspot.gateway.config;
 import org.springframework.cloud.gateway.route.RouteLocator;
 import org.springframework.cloud.gateway.route.builder.RouteLocatorBuilder;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
-@ComponentScan
+import org.springframework.web.cors.CorsConfiguration;
+import org.springframework.web.cors.reactive.CorsWebFilter;
+import org.springframework.web.cors.reactive.UrlBasedCorsConfigurationSource;
+
 @Configuration
 public class GatewayRoutingConfig {
 	@Bean
@@ -29,4 +31,49 @@ public class GatewayRoutingConfig {
 				.route("adminService", r -> r.path("/api/admin**").uri("http://localhost:8085"))
 				.build();
 	}
+	
+	 @Bean
+	    public CorsWebFilter corsWebFilter() {
+	        CorsConfiguration corsConfiguration = new CorsConfiguration();
+	        corsConfiguration.addAllowedOrigin("*");
+	        corsConfiguration.addAllowedMethod("*");
+	        corsConfiguration.addAllowedHeader("*");
+	        corsConfiguration.setAllowCredentials(true);
+
+	        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+	        source.registerCorsConfiguration("/**", corsConfiguration);
+
+	        return new CorsWebFilter(source);
+	    }
+	
+//	@Bean
+//    public CorsWebFilter corsFilter() {
+//        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+//        CorsConfiguration config = new CorsConfiguration();
+//
+//        // Set allowed origins - Replace "http://localhost:4200" with your Angular app's domain/port
+//        config.addAllowedOrigin("http://localhost:4200");
+//
+//        // Set allowed HTTP methods
+//        config.addAllowedMethod("GET");
+//        config.addAllowedMethod("POST");
+//        config.addAllowedMethod("PUT");
+//        config.addAllowedMethod("PATCH");
+//        config.addAllowedMethod("DELETE");
+//        config.addAllowedMethod("OPTIONS");
+//
+//        // Set allowed headers
+//        config.addAllowedHeader("Jwt-Token");
+//        config.addAllowedHeader("Authorization");
+//        config.addAllowedHeader("Content-Type");
+//
+//        // Allow credentials (e.g., cookies) to be included in the request
+//        config.setAllowCredentials(true);
+//
+//        source.registerCorsConfiguration("/**", config);
+//
+//        // Use CorsFilter constructor with UrlBasedCorsConfigurationSource
+//        return new CorsWebFilter(source);
+//    }
+	
 }

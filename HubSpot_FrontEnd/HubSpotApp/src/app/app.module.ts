@@ -50,6 +50,10 @@ import { SettingsComponent } from './settings/settings.component';
 import { FeedbackComponent } from './feedback/feedback.component';
 import { CustHistroyComponent } from './cust-histroy/cust-histroy.component';
 import { HomeheaderComponent } from './homeheader/homeheader.component';
+import { AuthGuard } from './auth.guard';
+import { UserprofileComponent } from './userprofile/userprofile.component';
+import { ProfUpdateComponent } from './prof-update/prof-update.component';
+import { UpdateDialogComponent } from './update-dialog/update-dialog.component';
 
 @NgModule({
   declarations: [
@@ -85,6 +89,9 @@ import { HomeheaderComponent } from './homeheader/homeheader.component';
     FeedbackComponent,
     CustHistroyComponent,
     HomeheaderComponent,
+    UserprofileComponent,
+    ProfUpdateComponent,
+    UpdateDialogComponent,
    
   ],
   imports: [
@@ -106,7 +113,7 @@ import { HomeheaderComponent } from './homeheader/homeheader.component';
     MatInputModule
     
   ],
-  providers: [UserserviceService,RouteService,RoomServiceService,CustomerService],
+  providers: [UserserviceService,RouteService,RoomServiceService,CustomerService,AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

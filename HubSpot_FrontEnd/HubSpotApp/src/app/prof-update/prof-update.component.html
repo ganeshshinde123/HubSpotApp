@@ -1,0 +1,89 @@
+<div class="container mt-4">
+    <form [formGroup]="updateform" (ngSubmit)="update(updateform)">
+      <div class="title">Registration</div>
+      <div class="user_details">
+        <div class="input_pox">
+          <span class="datails">First Name</span>
+          <input type="text" class="form-control" placeholder="First Name" formControlName="firstName" [(ngModel)]="user.firstName">
+          <div *ngIf="updateform.controls['firstName'].invalid && (updateform.controls['firstName'].dirty || updateform.controls['firstName'].touched)"
+            class="error-message">
+            <span *ngIf="updateform.controls['firstName'].errors" class="text-danger">First Name is required.</span>
+          </div>
+        </div>
+        <div class="input_pox">
+          <span class="datails">Last Name</span>
+          <input type="text" class="form-control" placeholder="Last Name" formControlName="lastName" [(ngModel)]="user.lastName">
+          <div *ngIf="updateform.controls['lastName'].invalid && (updateform.controls['lastName'].dirty || updateform.controls['lastName'].touched)"
+            class="error-message">
+            <span *ngIf="updateform.controls['lastName'].errors" class="text-danger">Last Name is required.</span>
+          </div>
+        </div>
+        <div class="input_pox">
+          <span class="datails">Age</span>
+          <input type="number" readonly class="form-control" placeholder=" > 18" formControlName="age" min=18 [(ngModel)]="user.age">
+          <div *ngIf="updateform.controls['age'].invalid && (updateform.controls['age'].dirty || updateform.controls['age'].touched)"
+            class="error-message">
+            <span *ngIf="updateform.controls['age'].errors" class="text-danger">Age is required.</span>
+            <span *ngIf="updateform.controls['age'].errors" class="text-danger">You should be at least 18 years old.</span>
+          </div>
+        </div>
+        <div class="input_pox">
+          <span class="datails">Email</span>
+          <input type="email" class="form-control" placeholder="name@example.com" formControlName="email" [(ngModel)]="user.email">
+          <div *ngIf="updateform.controls['email'].invalid && (updateform.controls['email'].dirty || updateform.controls['email'].touched)"
+            class="error-message">
+            <span *ngIf="updateform.controls['email'].errors" class="text-danger">Email is required.</span>
+            <span *ngIf="updateform.controls['email'].errors" class="text-danger">Invalid email format.</span>
+          </div>
+        </div>
+        <div class="input_pox">
+          <span class="datails">Phone Number</span>
+          <input type="number" placeholder="enter your Phone" formControlName="mobileNumber" class="form-control" minlength="10" maxlength="10" pattern="[0-9]{10}" [(ngModel)]="user.mobileNumber">
+          <div *ngIf="updateform.controls['mobileNumber'].invalid && (updateform.controls['mobileNumber'].dirty || updateform.controls['mobileNumber'].touched)"
+            class="error-message">
+            <span *ngIf="updateform.controls['mobileNumber'].errors" class="text-danger">Phone Number is required.</span>
+            <span *ngIf="updateform.controls['mobileNumber'].errors" class="text-danger">Invalid phone number format.</span>
+          </div>
+        </div>
+        <div class="input_pox">
+          <span class="datails">Company Name</span>
+          <input type="text" class="form-control" placeholder="Company Name" formControlName="companyName" [(ngModel)]="user.companyName">
+          <div *ngIf="updateform.controls['companyName'].invalid && (updateform.controls['companyName'].dirty || updateform.controls['companyName'].touched)"
+            class="error-message">
+            <small *ngIf="updateform.controls['companyName'].errors" class="text-danger">*Company Name is required.</small>
+          </div>
+        </div>
+        <div class="input_pox">
+          <!-- <span class="datails">Password</span>
+          <input type="password" placeholder="enter your Password" formControlName="password" class="form-control" [(ngModel)]="updateform.value.password">
+          <div *ngIf="updateform.controls['password'].invalid && (updateform.controls['password'].dirty || updateform.controls['password'].touched)"
+            class="error-message">
+            <small *ngIf="updateform.controls['password'].errors" class="text-danger">*Password is required.</small>
+          </div> -->
+        </div>
+      </div>
+      <div class="gender_details">
+        <!-- <span class="gender_title">Gender</span>
+        <div class="category">
+          <input type="radio" name="gender" id="dot-1" [(ngModel)]="gender" value="Male">
+          <label for="dot-1">
+            <span class="gender">Male</span>
+          </label>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <input type="radio" name="gender" id="dot-2" [(ngModel)]="gender" value="Female">
+          <label for="dot-2">
+            <span class="gender">Female</span>
+          </label>
+        </div> -->
+      </div>
+      <div class="button">
+        <input type="submit" value="Update" >
+      </div>
+      <div class="input_pox">
+        <a class="back">
+            <button class="btn btn-info" (click)="goBack()">Back to profile</button>
+        </a>
+    </div>
+    </form>
+  </div>
+  

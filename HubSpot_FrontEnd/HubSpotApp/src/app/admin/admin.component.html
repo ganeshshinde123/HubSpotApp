@@ -6,21 +6,7 @@
     <title>HubSpot</title>
 </head>
 <app-adminheader></app-adminheader>
-<!-- 
-<form [formGroup]="cusForm" (ngSubmit)="cusBooking(cusForm)">
-    id:<input type="text" formControlName="id"/>
-    fullname:<input type="text" formControlName="fullname"/><br/><br/>
-    fulladdress:<input type="text" formControlName="fulladdress"/><br/><br/>
-    contactnumber:<input type="text" formControlName="contactnumber" /><br/><br/>
-    alternatecontactnumber:<input type="text" formControlName="alternatecontactnumber" /><br/><br/>
-    name:<input type="text" formControlName="name" /><br/><br/>
-    amount:<input type="text" min="1" max="10" formControlName="amount" /><br/><br/>
-    quantity:<input type="text" min="1" max="10" formControlName="quantity" /><br/><br/>
-    <button>place Order</button>
-   
-</form><br/><br/><br/><br/>
-<button routerLink="/bookinghistory">Booking history</button> -->
-<!-- <h1>{{imageLink}}</h1 -->
+
     <div *ngFor="let aObj of aList">
         <!-- <img [src]="aObj.imgurl" /> -->
     </div>
@@ -31,33 +17,6 @@
         
         <div class="row container d-flex justify-content-center">
 <div class="col-md-6 col-lg-4">
-            <!-- <form class="card" [formGroup]="aForm" (ngSubmit)="adminBooking(aForm)">
-              <h5 class="card-title fw-400">Enter Delivery Address</h5>
-
-              <div class="card-body">
-                <div class="form-group">
-                    Room Type<input class="form-control" formControlName="roomName" type="text" placeholder="Enter Room Name">
-                </div>
-
-                <div class="form-group">
-                    Capacity<input class="form-control" formControlName="capacity" type="number" placeholder="Enter Capacity of seating">
-                </div>
-
-                <div class="form-group">
-                    Location<input class="form-control" formControlName="location" type="text" placeholder="Choose Location">
-                </div>
-                <div class="form-group">
-                    Price<input class="form-control" formControlName="price" type="number" placeholder="Enter Price">
-                </div>
-                <div class="form-group">
-                    Details<input class="form-control" formControlName="details" type="text" placeholder="name">
-                </div>
-                <div class="form-group">
-                    Imgurl<input class="form-control" formControlName="imgurl" type="text" placeholder="Paste Image Url">
-                </div>
-                <button class="btn btn-block btn-bold btn-primary">Add Room</button>
-              </div>
-            </form> -->
             <form class="card" [formGroup]="aForm" (ngSubmit)="adminBooking(aForm)">
                 <h5 class="card-title fw-400">Enter Delivery Address</h5>
   
